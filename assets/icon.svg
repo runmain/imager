@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#eef6ff"/>
+      <stop offset="1" stop-color="#dcecff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.45" stop-color="#a5f3fc"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#1e3a8a" flood-opacity="0.18"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="frame">
+      <rect x="262" y="262" width="500" height="500" rx="56"/>
+    </clipPath>
+  </defs>
+
+  <!-- macOS 图标网格：824 内容区，四周留白 100 -->
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)" filter="url(#shadow)"/>
+  <rect x="101" y="101" width="822" height="822" rx="184" fill="none" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- 背景网格 -->
+  <g stroke="#bfdbfe" stroke-width="2" opacity="0.7">
+    <path d="M200 312H824M200 412H824M200 512H824M200 612H824M200 712H824"/>
+    <path d="M312 200V824M412 200V824M512 200V824M612 200V824M712 200V824"/>
+  </g>
+
+  <!-- 电路走线 -->
+  <g fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M262 400H200V300"/>
+    <path d="M262 620H170"/>
+    <path d="M762 360H840"/>
+    <path d="M762 560H810V700"/>
+    <path d="M440 262V190H520"/>
+    <path d="M600 762V840"/>
+  </g>
+  <g fill="#ffffff" stroke="url(#accent)" stroke-width="8">
+    <circle cx="200" cy="300" r="15"/>
+    <circle cx="170" cy="620" r="15"/>
+    <circle cx="840" cy="360" r="15"/>
+    <circle cx="810" cy="700" r="15"/>
+    <circle cx="520" cy="190" r="15"/>
+    <circle cx="600" cy="840" r="15"/>
+  </g>
+
+  <!-- 图片框：山 + 太阳 -->
+  <rect x="262" y="262" width="500" height="500" rx="56" fill="#ffffff"/>
+  <g clip-path="url(#frame)">
+    <rect x="262" y="262" width="500" height="500" fill="#f0f9ff"/>
+    <circle cx="610" cy="400" r="58" fill="url(#sun)" filter="url(#glow)"/>
+    <path d="M262 700L420 500L540 640L600 580L762 740V762H262Z" fill="url(#hill)"/>
+    <path d="M262 762L380 640L470 720L560 650L762 762Z" fill="url(#hill2)" opacity="0.9"/>
+  </g>
+  <rect x="262" y="262" width="500" height="500" rx="56" fill="none" stroke="url(#accent)" stroke-width="14"/>
+
+  <!-- AI 生成火花 -->
+  <g filter="url(#glow)" fill="url(#accent)">
+    <path d="M720 214C726 252 742 268 780 274C742 280 726 296 720 334C714 296 698 280 660 274C698 268 714 252 720 214Z"/>
+    <path d="M806 160C809 178 816 185 834 188C816 191 809 198 806 216C803 198 796 191 778 188C796 185 803 178 806 160Z" opacity="0.8"/>
+  </g>
+</svg>

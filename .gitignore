@@ -1,0 +1,16 @@
+# 编译产物：cargo 输出；build.sh 生成的 Imager.app 与源码包
+/target/
+/dist/
+
+# 临时产物：agent 会话记录、macOS 元数据
+/.agents/
+.DS_Store
+._*
+
+/docs/plans
+/docs/evidence/
+/docs/specs
+# egui_kittest 每次运行写出的快照结果（基准图 {name}.png 需要提交）
+/tests/snapshots/*.new.png
+/tests/snapshots/*.diff.png
+/tests/snapshots/*.old.png
